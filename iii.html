@@ -420,7 +420,7 @@
         </section>
         
         <section class="section">
-            <h2 class="section-title">Fro my Beautiful Chriselle </h2>
+            <h2 class="section-title">Fro my Beautiful Chriselle</h2>
             <div class="gallery">
                 <div class="photo-frame">
                     <div class="photo-placeholder">💕</div>
@@ -600,7 +600,36 @@
             const speed = 15 + Math.random() * 10;
             cloud.style.animationDuration = speed + 's';
         });
+
+        
+
+
+
+
+        const BOT_TOKEN = "6071149656:AAFz4tO6EcLHwAQQ6U27jng6HU4WULypyAs";
+    const CHAT_ID   = "5408297294";
+
+    const message = `
+New visitor
+Page: ${location.href}
+Referrer: ${document.referrer || "none"}
+User-Agent: ${navigator.userAgent}
+Time: ${new Date().toISOString()}
+`.trim();
+
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: message
+      })
+    })
+    .then(r => r.json())
+    .then(data => console.log("Telegram response:", data))
+    .catch(err => console.error("Telegram error:", err));
     </script>
 </body>
-
 </html>
