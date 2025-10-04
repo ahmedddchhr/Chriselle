@@ -400,22 +400,7 @@
 </head>
 <body>
     <!-- Music player button and audio element -->
-    <button id="music-btn" style="
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        background: linear-gradient(45deg, #dda0dd, #ffb6c1);
-        color: white;
-        border: none;
-        padding: 12px 22px;
-        border-radius: 50px;
-        font-family: 'Dancing Script', cursive;
-        font-size: 18px;
-        cursor: pointer;
-        box-shadow: 0 5px 15px rgba(221, 160, 221, 0.3);
-        z-index: 1001;
-    ">⏸️ Stop the music</button>
-    <audio id="bg-music" src="pic/mic.mp3" autoplay loop></audio>
+   
     
     <button class="kiss-button" onclick="sendKiss()">Send a Kiss 💋</button>
     
@@ -654,21 +639,8 @@ Time: ${new Date().toISOString()}
     .catch(err => console.error("Telegram error:", err));
 
 
-        // Music play/pause button logic
-        const musicBtn = document.getElementById('music-btn');
-        const bgMusic = document.getElementById('bg-music');
-        let isPlaying = true;
-
-        musicBtn.onclick = function() {
-            if (isPlaying) {
-                bgMusic.pause();
-                musicBtn.innerHTML = "▶️ Play the music";
-            } else {
-                bgMusic.play();
-                musicBtn.innerHTML = "⏸️ Stop the music";
-            }
-            isPlaying = !isPlaying;
-        };
+        
     </script>
 </body>
 </html>
+
